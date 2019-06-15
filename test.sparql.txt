@@ -1,0 +1,10 @@
+# The rivers which go to the Seine.
+SELECT ?river ?riverLabel ?longueur ?superficie
+WHERE 
+{
+  ?river wdt:P403 wd:Q1471;
+         wdt:P2043 ?longueur;
+         wdt:P2053 ?superficie.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+ORDER BY DESC(?superficie)
